@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+plotly
+matplotlib
+streamlit-extras
+streamlit-lottie
+streamlit-server-state
+sqlalchemy
+psycopg2-binary

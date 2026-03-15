@@ -12,7 +12,7 @@ def load_css():
     with open("frontend/style.css") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 load_css()
-style_metric_cards(border_left_color="#6366f1", background_color="rgba(0,0,0,0)")
+style_metric_cards(border_left_color="#059669", background_color="#ffffff")
 
 def load_lottie(url):
     try:
@@ -176,7 +176,7 @@ with tab_historial:
     with c2:
         confirmadas = sum(1 for i in inscripciones if i["Estado"] == "Confirmada")
         st.metric("Confirmadas", confirmadas)
-    style_metric_cards(border_left_color="#6366f1", background_color="rgba(0,0,0,0)")
+    style_metric_cards(border_left_color="#059669", background_color="#ffffff")
 
     st.markdown('<hr class="divider-line">', unsafe_allow_html=True)
 

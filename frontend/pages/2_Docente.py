@@ -99,7 +99,7 @@ with tab_crear:
         st.markdown("""
         <div style="padding: 1rem 0; animation: fadeUp 0.6s ease;">
             <div class="section-label" style="margin-bottom: 12px;">¿Qué puedes hacer aquí?</div>
-            <p style="color:#94a3b8; font-size:0.9rem; line-height:1.6;">
+            <p style="color:#475569; font-size:0.9rem; line-height:1.6;">
                 Registra una nueva tutoría con su tema, horario y aforo. 
                 Una vez publicada, los estudiantes podrán inscribirse desde su panel.
             </p>

@@ -10,7 +10,7 @@ def load_css():
     with open("frontend/style.css") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 load_css()
-style_metric_cards(border_left_color="#6366f1", background_color="rgba(0,0,0,0)")
+style_metric_cards(border_left_color="#059669", background_color="#ffffff")
 
 if not st.session_state.get("autenticado"):
     st.warning("Acceso restringido. Inicia sesión primero.")
@@ -154,7 +154,7 @@ with tab_dash:
     PLOTLY_LAYOUT = dict(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        font=dict(family="Inter, sans-serif", color="#94a3b8", size=12),
+        font=dict(family="Inter, sans-serif", color="#1e293b", size=12),
         margin=dict(l=0, r=0, t=28, b=0),
     )
 
@@ -165,12 +165,12 @@ with tab_dash:
             fig = px.bar(
                 df, x="Inscritos", y="Tutoría", orientation="h",
                 color="Inscritos",
-                color_continuous_scale=["#312e81", "#6366f1", "#818cf8"],
-                template="plotly_dark",
+                color_continuous_scale=["#dcfce7", "#10b981", "#059669"],
+                template="plotly_white",
             )
             fig.update_traces(marker_line_width=0)
             fig.update_layout(**PLOTLY_LAYOUT, coloraxis_showscale=False)
-            fig.update_xaxes(showgrid=True, gridcolor="rgba(255,255,255,0.05)", zeroline=False)
+            fig.update_xaxes(showgrid=True, gridcolor="rgba(0,0,0,0.05)", zeroline=False)
             fig.update_yaxes(showgrid=False)
             st.plotly_chart(fig, use_container_width=True)
         else:
@@ -183,8 +183,8 @@ with tab_dash:
             fig2 = px.pie(
                 df2, names="Rol", values="Cantidad",
                 hole=0.55,
-                color_discrete_sequence=["#6366f1", "#818cf8", "#a5b4fc"],
-                template="plotly_dark",
+                color_discrete_sequence=["#059669", "#10b981", "#34d399"],
+                template="plotly_white",
             )
             fig2.update_traces(textposition="outside", textfont_size=12)
             fig2.update_layout(
@@ -237,14 +237,14 @@ with tab_new:
 
     with col_help:
         st.markdown("""
-        <div style="background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.2); border-radius: 12px; padding: 20px; animation: fadeUp 0.5s ease;">
+        <div style="background: #f0fdf4; border: 1px solid #dcfce7; border-radius: 12px; padding: 20px; animation: fadeUp 0.5s ease;">
             <div class="section-label" style="margin-bottom: 10px;">Roles del sistema</div>
-            <p style="color:#94a3b8; font-size:0.85rem; line-height:1.7; margin:0;">
-                <strong style="color:#f1f5f9;">Estudiante</strong><br>
+            <p style="color:#1e293b; font-size:0.85rem; line-height:1.7; margin:0;">
+                <strong style="color:#065f46;">Estudiante</strong><br>
                 Busca e inscribe sesiones.<br><br>
-                <strong style="color:#f1f5f9;">Docente</strong><br>
+                <strong style="color:#065f46;">Docente</strong><br>
                 Crea y administra tutorías propias.<br><br>
-                <strong style="color:#f1f5f9;">Administrador</strong><br>
+                <strong style="color:#065f46;">Administrador</strong><br>
                 Control total de la plataforma.
             </p>
         </div>

@@ -35,10 +35,26 @@ h1, h2, h3, h4 {
     letter-spacing: -0.5px;
 }
 
-/* Ocultar Chrome de Streamlit */
-#MainMenu, footer, header { visibility: hidden !important; }
-section[data-testid="stSidebar"] > div:first-child { padding-top: 1.5rem; }
-button[data-testid="collapsedControl"] { display: none !important; }
+/* Ocultar botones de colapsar sidebar y controles de encabezado */
+button[data-testid="collapsedControl"],
+[data-testid="stSidebarCollapseButton"],
+.st-emotion-cache-6qob1r, /* Selector específico para el botón de flechas */
+[aria-label="Close sidebar"],
+[aria-label="Open sidebar"],
+header[data-testid="stHeader"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Ocultar el texto del icono si llegara a filtrarse */
+span:has(> .material-symbols-rounded),
+div:has(> button[data-testid="collapsedControl"]) {
+    display: none !important;
+}
 
 /* --- Animaciones --- */
 @keyframes fadeUp {
